@@ -1,0 +1,9 @@
+from buku import Buku
+from file_storage import FileStorage
+class Perpustakaan:
+    def __init__(self):
+        self.__daftar_buku = {}
+        self.__storage = FileStorage("buku.txt")
+        self.muat_data()
+    def muat_data(self):
+        self.__daftar_buku = self.__storage.load()
