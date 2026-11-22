@@ -114,3 +114,7 @@ class MenuConsole:
                     break
                 else:
                     print("\n[X] Pilihan menu tidak valid!")
+
+if __name__ == "__main__":
+    app = MenuConsole()
+    app.jalankan()
