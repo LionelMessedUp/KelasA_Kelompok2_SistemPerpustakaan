@@ -47,7 +47,7 @@ class Buku:
         judul = data[1]
         penulis = data[2]
         penerbit = data[3]
-        tahun = data[4]
+        tahun = int(data[4])
         return Buku(kode, judul, penulis, penerbit, tahun)
 
     def tampilkan_info(self):
