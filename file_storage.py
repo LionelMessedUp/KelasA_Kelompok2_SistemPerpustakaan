@@ -19,7 +19,7 @@ class FileStorage:
         return data
 
     def save(self, data: dict):
-        with open(self.__nama_file, "w") as file:
+        with open(self.__nama_file, "w", encoding="utf-8") as file:
             for buku in data.values():
                 file.write(buku.to_line())
 
