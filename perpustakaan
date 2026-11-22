@@ -15,3 +15,5 @@ def kode_ada(self, kode: str) -> bool:
         self.__daftar_buku[buku.get_kode_buku()] = buku
         self.__storage.append(buku)
         return True
+def cari_buku(self, kode: str) -> Buku:
+        return self.__daftar_buku[kode]
