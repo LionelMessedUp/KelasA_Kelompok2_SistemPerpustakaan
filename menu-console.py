@@ -39,12 +39,11 @@ class MenuConsole:
             else:
                 print("[X] Gagal: Kode buku sudah terdaftar!")
     
-        print("\n==============================================")
-        print("     APLIKASI PENGELOLAAN BUKU PERPUSTAKAAN   ")
-        print("==============================================")
-        print("1. Tambah Data Buku")
-        print("2. Cari Data Buku")
-        print("3. Hapus Data Buku")
-        print("4. Perbarui Data Buku")
-        print("0. Keluar")
-        print("==============================================")
+    def menu_cari(self):
+            print("\n--- Cari Data Buku ---")
+            kode = input("Masukkan Kode Buku: ").strip()
+            buku = self.__perpustakaan.cari_buku(kode)
+            if buku:
+                buku.tampilkan_info()
+            else:
+                print("[X] Data buku tidak ditemukan.")
