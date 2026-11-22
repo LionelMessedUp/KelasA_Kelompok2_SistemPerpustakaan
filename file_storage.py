@@ -4,10 +4,15 @@ class FileStorage:
 
     def load (self) -> dict:
         data = {}
-        with open(self.__nama_file, "r") as file:
-            for line in file:
+        try:
+            with open(self.__nama_file, "r") as file:
+                for line in file:
+                    if line.strip() == "":
+                        continue
                 buku = Buku.from_line(line)
                 data[buku.get_kode_buku()] = buku
+        except FileNotFoundError:
+            pass
         return data
 
     def save(self, data: dict):
