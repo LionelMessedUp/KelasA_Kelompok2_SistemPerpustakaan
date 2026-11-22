@@ -47,3 +47,20 @@ class MenuConsole:
                 buku.tampilkan_info()
             else:
                 print("[X] Data buku tidak ditemukan.")
+
+    def menu_hapus(self):
+            print("\n--- Hapus Data Buku ---")
+            kode = input("Masukkan Kode Buku: ").strip()
+            buku = self.__perpustakaan.cari_buku(kode)
+            if not buku:
+                print("[X] Data buku tidak ditemukan.")
+                return
+    
+            buku.tampilkan_info()
+            konfirmasi = input("Yakin ingin menghapus buku ini? (y/n): ").strip().lower()
+            if konfirmasi != "y":
+                print("[!] Penghapusan dibatalkan.")
+                return
+    
+            if self.__perpustakaan.hapus_buku(kode):
+                print("[V] Data buku berhasil dihapus.")
