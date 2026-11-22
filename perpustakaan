@@ -17,3 +17,8 @@ def kode_ada(self, kode: str) -> bool:
         return True
 def cari_buku(self, kode: str) -> Buku:
         return self.__daftar_buku.get(kode)
+def hapus_buku(self, kode: str) -> bool:
+        if not self.kode_ada(kode):
+            return False
+        del self.__daftar_buku[kode]
+        return True
