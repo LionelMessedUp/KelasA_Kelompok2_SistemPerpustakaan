@@ -7,3 +7,11 @@ class Perpustakaan:
         self.muat_data()
     def muat_data(self):
         self.__daftar_buku = self.__storage.load()
+def kode_ada(self, kode: str) -> bool:
+        return kode in self.__daftar_buku
+    def tambah_buku(self, buku: Buku) -> bool:
+        if self.kode_ada(buku.get_kode_buku()):
+            return False
+        self.__daftar_buku[buku.get_kode_buku()] = buku
+        self.__storage.append(buku)
+        return True
