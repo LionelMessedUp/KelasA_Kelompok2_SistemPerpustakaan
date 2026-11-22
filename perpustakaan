@@ -23,3 +23,13 @@ def hapus_buku(self, kode: str) -> bool:
         del self.__daftar_buku[kode]
         self.__storage.save(self.__daftar_buku)
         return True
+def perbarui_buku(self, kode: str, data_baru: dict) -> bool:
+        buku = self.cari_buku(kode)
+        if not buku:
+            return False
+        buku.set_judul(data_baru["judul"])
+        buku.set_penulis(data_baru["penulis"])
+        buku.set_penerbit(data_baru["penerbit"])
+        buku.set_tahun_terbit(data_baru["tahun"])
+        self.__storage.save(self.__daftar_buku)
+        return True
