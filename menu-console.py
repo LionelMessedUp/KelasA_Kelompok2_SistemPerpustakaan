@@ -39,3 +39,12 @@ class MenuConsole:
             else:
                 print("[X] Gagal: Kode buku sudah terdaftar!")
     
+        print("\n==============================================")
+        print("     APLIKASI PENGELOLAAN BUKU PERPUSTAKAAN   ")
+        print("==============================================")
+        print("1. Tambah Data Buku")
+        print("2. Cari Data Buku")
+        print("3. Hapus Data Buku")
+        print("4. Perbarui Data Buku")
+        print("0. Keluar")
+        print("==============================================")
