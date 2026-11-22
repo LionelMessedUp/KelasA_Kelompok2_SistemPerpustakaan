@@ -17,3 +17,25 @@ class MenuConsole:
             print("[X] Kode tidak boleh kosong dan tahun harus berupa angka!")
             return None
         return Buku(kode, judul, penulis, penerbit, int(tahun))
+
+    def tampilkan_menu(self):
+            print("\n==============================================")
+            print("     APLIKASI PENGELOLAAN BUKU PERPUSTAKAAN   ")
+            print("==============================================")
+            print("1. Tambah Data Buku")
+            print("2. Cari Data Buku")
+            print("3. Hapus Data Buku")
+            print("4. Perbarui Data Buku")
+            print("0. Keluar")
+            print("==============================================")
+
+    def menu_tambah(self):
+            print("\n--- Tambah Data Buku ---")
+            buku = self.__input_data_buku()
+            if not buku:
+                return
+            if self.__perpustakaan.tambah_buku(buku):
+                print("[V] Data buku berhasil ditambahkan.")
+            else:
+                print("[X] Gagal: Kode buku sudah terdaftar!")
+    
