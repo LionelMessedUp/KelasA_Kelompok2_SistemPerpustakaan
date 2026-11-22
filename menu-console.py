@@ -64,3 +64,34 @@ class MenuConsole:
     
             if self.__perpustakaan.hapus_buku(kode):
                 print("[V] Data buku berhasil dihapus.")
+
+    def menu_perbarui(self):
+           print("\n--- Perbarui Data Buku ---")
+           kode = input("Masukkan Kode Buku: ").strip()
+           buku = self.__perpustakaan.cari_buku(kode)
+           if not buku:
+               print("[X] Data buku tidak ditemukan.")
+               return
+   
+           print("(Kosongkan input jika tidak ingin mengubah)")
+           judul = input(f"Judul Baru ({buku.get_judul()}): ").strip() or buku.get_judul()
+           penulis = input(f"Penulis Baru ({buku.get_penulis()}): ").strip() or buku.get_penulis()
+           penerbit = input(f"Penerbit Baru ({buku.get_penerbit()}): ").strip() or buku.get_penerbit()
+           tahun = input(f"Tahun Baru ({buku.get_tahun_terbit()}): ").strip()
+   
+           if tahun == "":
+               tahun = buku.get_tahun_terbit()
+           elif tahun.isdigit():
+               tahun = int(tahun)
+           else:
+               print("[X] Tahun harus berupa angka!")
+               return
+   
+           data_baru = {
+               "judul": judul,
+               "penulis": penulis,
+               "penerbit": penerbit,
+               "tahun_terbit": tahun,
+           }
+           if self.__perpustakaan.perbarui_buku(kode, data_baru):
+               print("[V] Data buku berhasil diperbarui.")
