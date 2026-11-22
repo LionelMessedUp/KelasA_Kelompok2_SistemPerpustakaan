@@ -21,4 +21,5 @@ def hapus_buku(self, kode: str) -> bool:
         if not self.kode_ada(kode):
             return False
         del self.__daftar_buku[kode]
+        self.__storage.save(self.__daftar_buku)
         return True
