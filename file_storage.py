@@ -1,3 +1,5 @@
+from buku import Buku
+
 class FileStorage:
 
     def __init__(self, nama_file: str):
