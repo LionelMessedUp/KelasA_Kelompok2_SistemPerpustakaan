@@ -95,3 +95,22 @@ class MenuConsole:
            }
            if self.__perpustakaan.perbarui_buku(kode, data_baru):
                print("[V] Data buku berhasil diperbarui.")
+
+    def jalankan(self):
+            while True:
+                self.tampilkan_menu()
+                pilihan = input("Pilih menu (0-4): ").strip()
+    
+                if pilihan == "1":
+                    self.menu_tambah()
+                elif pilihan == "2":
+                    self.menu_cari()
+                elif pilihan == "3":
+                    self.menu_hapus()
+                elif pilihan == "4":
+                    self.menu_perbarui()
+                elif pilihan == "0":
+                    print("\nTerima kasih telah menggunakan Aplikasi Perpustakaan.")
+                    break
+                else:
+                    print("\n[X] Pilihan menu tidak valid!")
