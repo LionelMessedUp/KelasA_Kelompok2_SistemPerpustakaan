@@ -25,4 +25,4 @@ class FileStorage:
 
     def append(self, buku: Buku):
         with open(self.__nama_file, "a", encoding="utf-8") as file:
-            file.write(buku.toline())
+            file.write(buku.to_line())
