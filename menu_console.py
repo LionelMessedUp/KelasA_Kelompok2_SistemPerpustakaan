@@ -1,6 +1,9 @@
 # ==========================================
-# 4. CLASS MENU CONSOLE
+# CLASS MENU CONSOLE
 # ==========================================
+from buku import Buku
+from perpustakaan import Perpustakaan
+
 class MenuConsole:
     def __init__(self):
         self.__perpustakaan = Perpustakaan()
