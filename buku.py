@@ -5,8 +5,7 @@ class Buku:
         self.__penulis = penulis
         self.__penerbit = penerbit
         self.__tahun_terbit = tahun_terbit
-
-    # getter
+        
     def get_kode_buku(self):
         return self.__kode_buku
 
@@ -22,7 +21,6 @@ class Buku:
     def get_tahun_terbit(self):
         return self.__tahun_terbit
 
-    # setter
     def set_judul(self, judul):
         self.__judul = judul
 
@@ -35,11 +33,9 @@ class Buku:
     def set_tahun_terbit(self, tahun):
         self.__tahun_terbit = tahun
 
-    #simpan ke file
     def to_line(self):
         return f"{self.__kode_buku}|{self.__judul}|{self.__penulis}|{self.__penerbit}|{self.__tahun_terbit}\n"
 
-    # ubah jadi objek Buku lagi
     @staticmethod
     def from_line(line):
         data = line.strip().split("|")
