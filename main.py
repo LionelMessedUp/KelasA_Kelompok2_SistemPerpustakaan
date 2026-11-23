@@ -1,4 +1,8 @@
+from menu_console import MenuConsole
+
 def main():
-    print("=====APLIKASI SISTEM PERPUSTAKAAN======")
+    menu = MenuConsole()
+    menu.jalankan()
+
 if __name__ == "__main__":
     main()
