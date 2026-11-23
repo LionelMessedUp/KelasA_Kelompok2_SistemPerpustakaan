@@ -9,7 +9,6 @@ class MenuConsole:
         self.__perpustakaan = Perpustakaan()
 
     def __input_data_buku(self) -> Buku:
-        # Method privat: meminta data buku dari pengguna
         kode = input("Masukkan Kode Buku : ").strip()
         judul = input("Masukkan Judul     : ").strip()
         penulis = input("Masukkan Penulis   : ").strip()
